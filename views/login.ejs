@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Aadhaar Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #4e73df, #1cc88a);
+      }
+
+      .login-container {
+        background: white;
+        padding: 40px;
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+
+      .input-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+
+      .input-group input:focus {
+        border-color: #4e73df;
+        outline: none;
+        box-shadow: 0 0 5px rgba(78, 115, 223, 0.4);
+      }
+
+      .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #4e73df;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .login-btn:hover {
+        background-color: #2e59d9;
+      }
+
+      .footer-text {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+      }
+
+      .footer-text a {
+        text-decoration: none;
+        color: #4e73df;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <div class="input-group">
+          <label for="aadharCardNumber">Aadhaar Number</label>
+          <input
+            type="text"
+            id="aadhaar"
+            name="aadharCardNumber"
+            pattern="[0-9]{12}"
+            maxlength="12"
+            placeholder="Enter 12-digit Aadhaar"
+            required
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+        <div class="footer-text">
+          Don't have an account? <a href="/signUpPage">Sign Up</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
